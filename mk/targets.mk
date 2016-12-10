@@ -72,6 +72,11 @@ bbbmini: TOOLCHAIN = BBONE
 bbbmini: BUILDSYS_DEPRECATED  = 1
 bbbmini: all
 
+blue: HAL_BOARD = HAL_BOARD_LINUX
+blue: TOOLCHAIN = BBONE
+blue: BUILDSYS_DEPRECATED  = 1
+blue: all
+
 bhat: HAL_BOARD = HAL_BOARD_LINUX
 bhat: TOOLCHAIN = RPI
 bhat: BUILDSYS_DEPRECATED  = 1
@@ -118,6 +123,7 @@ BOARDS += vrbrain
 BOARDS += vrbrain-v51 vrbrain-v52 vrbrain-v54
 BOARDS += vrcore-v10
 BOARDS += vrubrain-v51 vrubrain-v52
+BOARDS += blue
 
 define frame_template
 $(1)-$(2) : EXTRAFLAGS += "-DFRAME_CONFIG=$(shell echo $(2) | tr a-z A-Z | sed s/-/_/g)_FRAME "
