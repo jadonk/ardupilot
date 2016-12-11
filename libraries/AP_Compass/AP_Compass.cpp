@@ -584,6 +584,9 @@ void Compass::_detect_backends(void)
                  AP_Compass_AK8963::name, false);
     ADD_BACKEND(AP_Compass_AK8963::probe_mpu9250(*this, 1),
                  AP_Compass_AK8963::name, true);
+#elif HAL_COMPASS_DEFAULT == HAL_COMPASS_BLUE
+    ADD_BACKEND(AP_Compass_AK8963::probe(*this, hal.i2c_mgr->get_device(2, 0x0C)),
+                 AP_Compass_AK8963::name, false);
 #elif CONFIG_HAL_BOARD_SUBTYPE == HAL_BOARD_SUBTYPE_LINUX_MINLURE
     ADD_BACKEND(AP_Compass_HMC5843::probe_mpu6000(*this),
                  AP_Compass_HMC5843::name, false);

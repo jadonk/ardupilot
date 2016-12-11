@@ -776,6 +776,8 @@ AP_InertialSensor::detect_backends(void)
     } else {
         hal.console->printf("aero: onboard IMU not detected\n");
     }
+#elif HAL_INS_DEFAULT == HAL_INS_BLUE
+    _add_backend(AP_InertialSensor_MPU9250::probe(*this, hal.i2c_mgr->get_device(2, 0x68)));
 #else
     #error Unrecognised HAL_INS_TYPE setting
 #endif
