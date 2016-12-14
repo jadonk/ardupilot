@@ -82,6 +82,7 @@
 #define HAL_BARO_MS5637_I2C  8
 #define HAL_BARO_QFLIGHT     9
 #define HAL_BARO_QURT       10
+#define HAL_BARO_BLUE       11
 
 /* Compass driver types */
 #define HAL_COMPASS_HMC5843             1
@@ -100,6 +101,7 @@
 #define HAL_COMPASS_NAVIO2             14
 #define HAL_COMPASS_NAVIO              15
 #define HAL_COMPASS_AERO               16
+#define HAL_COMPASS_BLUE               17
 
 /* Heat Types */
 #define HAL_LINUX_HEAT_PWM 1
